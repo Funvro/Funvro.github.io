@@ -1,1 +1,0 @@
-Add your round logo as logo.png in this folder, then upload all files to a GitHub repository and enable GitHub Pages.
