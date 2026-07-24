@@ -1,0 +1,1 @@
+const t='Sub2Funvro';let i=0;setInterval(()=>{if(i<=t.length){typing.textContent=t.slice(0,i++);}else{i=0;}},180);
