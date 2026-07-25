@@ -1,0 +1,641 @@
+/* ============================= */
+/*        FUNVRO PRO V2          */
+/* ============================= */
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+}
+
+body{
+
+background:#060B16;
+color:white;
+
+min-height:100vh;
+
+display:flex;
+justify-content:center;
+align-items:center;
+
+overflow:hidden;
+
+}
+
+/* ============================= */
+/*      Animated Background      */
+/* ============================= */
+
+.background{
+
+position:fixed;
+inset:0;
+
+background:
+linear-gradient(145deg,#040814,#091B3B,#050914);
+
+overflow:hidden;
+
+z-index:-5;
+
+}
+
+/* Blue Glow */
+
+.blur{
+
+position:absolute;
+
+width:420px;
+height:420px;
+
+border-radius:50%;
+
+filter:blur(120px);
+
+opacity:.45;
+
+animation:moveGlow 10s ease-in-out infinite alternate;
+
+}
+
+.blur1{
+
+background:#0077ff;
+
+top:-150px;
+left:-120px;
+
+}
+
+.blur2{
+
+background:#00c8ff;
+
+bottom:-180px;
+right:-120px;
+
+animation-delay:4s;
+
+}
+
+@keyframes moveGlow{
+
+from{
+
+transform:translate(0,0);
+
+}
+
+to{
+
+transform:translate(90px,-40px);
+
+}
+
+}
+
+/* ============================= */
+/*      Center Container         */
+/* ============================= */
+
+.wrapper{
+
+width:100%;
+
+display:flex;
+
+justify-content:center;
+align-items:center;
+
+padding:20px;
+
+}
+
+/* ============================= */
+/*        Main Card              */
+/* ============================= */
+
+.main-card{
+
+width:100%;
+max-width:430px;
+
+padding:35px 28px;
+
+border-radius:30px;
+
+background:rgba(255,255,255,.08);
+
+backdrop-filter:blur(25px);
+
+border:1px solid rgba(255,255,255,.12);
+
+box-shadow:
+
+0 0 60px rgba(0,140,255,.18),
+
+0 0 100px rgba(0,120,255,.12);
+
+animation:fadeUp .8s ease;
+
+}
+
+/* Fade */
+
+@keyframes fadeUp{
+
+from{
+
+opacity:0;
+
+transform:translateY(30px);
+
+}
+
+to{
+
+opacity:1;
+
+transform:translateY(0);
+
+}
+
+}
+
+/* ============================= */
+/*          Profile              */
+/* ============================= */
+
+.profile{
+
+text-align:center;
+
+margin-bottom:35px;
+
+}
+
+.logo-glow{
+
+width:160px;
+height:160px;
+
+margin:auto;
+
+border-radius:50%;
+
+padding:6px;
+
+background:linear-gradient(
+45deg,
+#00e1ff,
+#0084ff,
+#00c6ff,
+#0066ff);
+
+box-shadow:
+
+0 0 40px #00aaff,
+
+0 0 80px rgba(0,170,255,.5);
+
+animation:ringRotate 8s linear infinite;
+
+}
+
+.logo{
+
+width:100%;
+height:100%;
+
+border-radius:50%;
+
+object-fit:cover;
+
+border:5px solid #07101f;
+
+}
+
+@keyframes ringRotate{
+
+from{
+
+transform:rotate(0deg);
+
+}
+
+to{
+
+transform:rotate(360deg);
+
+}
+
+}
+
+h1{
+
+margin-top:20px;
+
+font-size:36px;
+
+font-weight:700;
+
+}
+
+#typing{
+
+margin-top:10px;
+
+height:24px;
+
+font-size:18px;
+
+color:#71d2ff;
+
+letter-spacing:1px;
+
+}
+/* ============================= */
+/*         LINK CARDS            */
+/* ============================= */
+
+.links{
+display:flex;
+flex-direction:column;
+gap:18px;
+}
+
+.link-card{
+
+position:relative;
+
+display:flex;
+justify-content:space-between;
+align-items:center;
+
+padding:18px 22px;
+
+border-radius:22px;
+
+text-decoration:none;
+
+color:white;
+
+background:rgba(255,255,255,.07);
+
+backdrop-filter:blur(20px);
+
+border:1px solid rgba(255,255,255,.12);
+
+overflow:hidden;
+
+transition:.35s ease;
+
+box-shadow:
+0 0 30px rgba(0,170,255,.12);
+
+}
+
+/* Blue glow behind cards */
+
+.link-card::after{
+
+content:"";
+
+position:absolute;
+
+inset:-25%;
+
+background:radial-gradient(circle,
+rgba(0,170,255,.22),
+transparent 70%);
+
+opacity:0;
+
+transition:.4s;
+
+z-index:-1;
+
+}
+
+.link-card:hover::after{
+
+opacity:1;
+
+}
+
+.link-card:hover{
+
+transform:translateY(-6px) scale(1.02);
+
+border-color:#00b7ff;
+
+box-shadow:
+0 0 25px #00b7ff,
+0 0 55px rgba(0,170,255,.25);
+
+}
+
+/* Shine Animation */
+
+.link-card::before{
+
+content:"";
+
+position:absolute;
+
+top:0;
+left:-140%;
+
+width:80px;
+height:100%;
+
+background:
+linear-gradient(
+90deg,
+transparent,
+rgba(255,255,255,.25),
+transparent);
+
+transform:skewX(-20deg);
+
+transition:.8s;
+
+}
+
+.link-card:hover::before{
+
+left:150%;
+
+}
+
+.left{
+
+display:flex;
+
+align-items:center;
+
+gap:16px;
+
+}
+
+/* Icons */
+
+.icon{
+
+width:56px;
+height:56px;
+
+display:flex;
+
+justify-content:center;
+align-items:center;
+
+border-radius:18px;
+
+font-size:24px;
+
+color:white;
+
+box-shadow:
+0 0 15px rgba(255,255,255,.15);
+
+}
+
+.youtube .icon{
+
+background:#ff3333;
+
+}
+
+.instagram .icon{
+
+background:linear-gradient(
+135deg,
+#ff5f6d,
+#ffc371);
+
+}
+
+.discord .icon{
+
+background:#5865F2;
+
+}
+
+/* Text */
+
+.left h3{
+
+font-size:18px;
+
+font-weight:600;
+
+}
+
+.left p{
+
+font-size:13px;
+
+margin-top:4px;
+
+opacity:.75;
+
+}
+
+/* Arrow */
+
+.arrow{
+
+font-size:18px;
+
+color:#77d8ff;
+
+transition:.35s;
+
+}
+
+.link-card:hover .arrow{
+
+transform:translateX(8px);
+
+color:white;
+
+}
+
+/* Footer */
+
+footer{
+
+margin-top:28px;
+
+text-align:center;
+
+font-size:13px;
+
+opacity:.7;
+
+}
+
+/* Mobile */
+
+@media(max-width:480px){
+
+.main-card{
+
+padding:26px 20px;
+
+}
+
+.logo-glow{
+
+width:140px;
+height:140px;
+
+}
+
+.link-card{
+
+padding:16px;
+
+}
+
+.left h3{
+
+font-size:17px;
+
+}
+
+}
+/* ============================= */
+/*        PARTICLES              */
+/* ============================= */
+
+#particles{
+
+position:absolute;
+
+width:100%;
+height:100%;
+
+overflow:hidden;
+
+}
+
+.particle{
+
+position:absolute;
+
+bottom:-20px;
+
+background:#49c6ff;
+
+border-radius:50%;
+
+opacity:.45;
+
+filter:blur(2px);
+
+animation:floatParticle linear infinite;
+
+}
+
+@keyframes floatParticle{
+
+0%{
+
+transform:translateY(0) scale(.5);
+
+opacity:0;
+
+}
+
+15%{
+
+opacity:1;
+
+}
+
+100%{
+
+transform:translateY(-110vh) scale(1.4);
+
+opacity:0;
+
+}
+
+}
+/* ============================= */
+/*      BIG BLUE AMBIENT GLOW    */
+/* ============================= */
+
+.main-card{
+    position: relative;
+    overflow: visible;
+}
+
+.main-card::before{
+    content: "";
+    position: absolute;
+    width: 180%;
+    height: 180%;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    background: radial-gradient(circle,
+        rgba(0,140,255,.22) 0%,
+        rgba(0,140,255,.12) 35%,
+        transparent 75%);
+    filter: blur(80px);
+    z-index: -2;
+    animation: ambientGlow 6s ease-in-out infinite alternate;
+}
+
+@keyframes ambientGlow{
+    from{
+        transform: translate(-50%, -50%) scale(0.95);
+        opacity: .6;
+    }
+
+    to{
+        transform: translate(-50%, -50%) scale(1.1);
+        opacity: 1;
+    }
+}
+
+/* ============================= */
+/*     STRONG LOGO HALO          */
+/* ============================= */
+
+.logo-glow{
+    position: relative;
+}
+
+.logo-glow::before{
+    content:"";
+    position:absolute;
+    inset:-30px;
+    border-radius:50%;
+    background:radial-gradient(circle,
+        rgba(0,180,255,.8),
+        transparent 70%);
+    filter:blur(40px);
+    z-index:-1;
+    animation:logoHalo 3s ease-in-out infinite alternate;
+}
+
+@keyframes logoHalo{
+
+    from{
+        transform:scale(.95);
+        opacity:.7;
+    }
+
+    to{
+        transform:scale(1.1);
+        opacity:1;
+    }
+
+}
