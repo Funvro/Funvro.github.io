@@ -1,1 +1,0 @@
-const msgs=['Welcome to Funvro','Gaming • Fun • Community','Sub2Funvro'];let m=0,i=0,d=false,e=document.getElementById('type');setInterval(()=>{let s=msgs[m];if(!d){e.textContent=s.slice(0,++i);if(i==s.length){d=true;setTimeout(()=>{},1200)}}else{e.textContent=s.slice(0,--i);if(i==0){d=false;m=(m+1)%msgs.length}}},180);
